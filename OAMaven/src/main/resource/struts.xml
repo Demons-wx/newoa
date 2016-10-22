@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.devMode" value="true" />
+
+	<include file="struts/struts-role.xml"></include>
+	<include file="struts/struts-user.xml"></include>
+	<include file="struts/struts-department.xml"></include>
+	<include file="struts/struts-forward.xml"></include>
+	<include file="struts/struts-forumManage.xml"></include>
+	<include file="struts/struts-forum.xml"></include>
+	<include file="struts/struts-reply.xml"></include>
+	<include file="struts/struts-topic.xml"></include>
+	<include file="struts/struts-workflow.xml"></include>
+	<include file="struts/struts-hotnews.xml"></include>
+	
+
+	<package name="privilegeOA" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="checkPrivilege" class="com.wx.oa.utils.CheckPrivilegeInterceptor" />
+			<interceptor-stack name="oastack">
+				<interceptor-ref name="checkPrivilege"/>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="oastack"/>
+		<global-results>
+			<result name="loginUI">login.jsp</result>
+			<result name="noPrivilegeError">noPrivilegeError.jsp</result>
+			<result name="mainPage">WEB-INF/jsp/frame/right.jsp</result>
+		</global-results>
+	</package>
+</struts>

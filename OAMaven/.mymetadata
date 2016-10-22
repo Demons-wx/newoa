@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="OAMaven"
+  id="myeclipse.1457920810685"
+  context-root="/OAMaven"
+  j2ee-spec="5.0"
+  archive="OAMaven.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

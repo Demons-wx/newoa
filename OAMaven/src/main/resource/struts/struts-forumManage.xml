@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+<struts>
+	<package name="forumManage" namespace="/" extends="privilegeOA">
+		<action name="forumManageAction_*" method="{1}" class="com.wx.oa.action.ForumManageAction">
+			<result name="listAction">WEB-INF/jsp/forumManageAction/list.jsp</result>
+			<result name="addUI">WEB-INF/jsp/forumManageAction/addUI.jsp</result>
+			<result name="updateUI">WEB-INF/jsp/forumManageAction/editUI.jsp</result>
+			<result name="action2action" type="redirectAction">forumManageAction_showAllForums</result>
+		</action>
+	</package>
+</struts>
+

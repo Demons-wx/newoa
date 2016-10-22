@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.wx.oa.domain.forummanage.Forum" table="forum">
+		<id name="id" column="id" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" length="20"></property>
+		<property name="description" length="50"></property>	
+		<property name="position" length="20"></property>
+		
+		<property name="topicCount"></property>
+		<property name="articleCount"></property>
+		
+		<set name="topics">
+			<key column="forumId"></key>
+			<one-to-many class="com.wx.oa.domain.forummanage.Topic"/>
+		</set>
+		
+		<many-to-one name="lastTopic" class="com.wx.oa.domain.forummanage.Topic" column="lastTopicId" unique="true"></many-to-one>
+	</class>
+</hibernate-mapping>

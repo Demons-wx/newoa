@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.wx.oa.domain.forummanage.Reply" table="reply">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="title"></property>
+		<property name="content" type="text" length="65536"></property>
+		<property name="postTime" type="timestamp"></property>
+		<property name="ipAddr"></property>
+		<many-to-one name="author" class="com.wx.oa.domain.sysmanage.User" column="authorId"></many-to-one>
+		<many-to-one name="topic" class="com.wx.oa.domain.forummanage.Topic" column="topicId"></many-to-one>
+	</class>
+</hibernate-mapping>
