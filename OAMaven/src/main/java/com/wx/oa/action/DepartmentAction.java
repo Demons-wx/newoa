@@ -76,4 +76,6 @@ public class DepartmentAction extends BaseAction<Department> {
 		departmentService.deleteDepartment(getModel().getDid());
 		return action2action;
 	}
+
+	// 添加一行没用的注释
 }
